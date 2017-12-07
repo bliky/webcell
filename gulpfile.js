@@ -74,7 +74,7 @@ gulp.task('server', function() {
     startPath: ''
   });
 
-  gulp.watch("index.html").on('change', browserSync.reload);
+  gulp.watch(["index.html", "pages/*.html"]).on('change', browserSync.reload);
 });
 
 gulp.task('build', ['build:style', 'build:js']);
