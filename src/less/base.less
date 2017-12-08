@@ -1,0 +1,123 @@
+table.webcell-table {
+  border-collapse: collapse;   
+  border-spacing: 0;
+  table-layout: fixed;
+}
+
+.webcell-table:not(table) {
+  display: inline-block;
+}
+
+.webcell-table {
+  overflow-y: hidden;
+  font-size: @webcellTextSize;
+  color: @webcellTextColor;
+  background-color: @webcellTableBackColor;
+
+  table{
+    border-collapse: collapse;   
+    border-spacing: 0;
+    table-layout: fixed;
+  }
+
+  tr {
+    background-color: @webcellRowBackColor;
+  }
+
+  th, td {
+    box-sizing: border-box;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    position: relative;
+    border-bottom: 1px solid @webcellBorderColor;
+    line-height: @webcellLineHeight;
+  }
+
+  th {
+    white-space: nowrap;
+    overflow: hidden;
+    user-select: none;
+    text-align: left;
+  }
+}
+
+.padding {
+  th, td {
+    padding: @webcellPadding;
+  }
+}
+
+.border {
+  border-top: 1px solid @webcellBorderColor;
+  border-left: 1px solid @webcellBorderColor;
+  th, td {
+    border-right: 1px solid @webcellBorderColor;
+  }
+}
+
+.striped, .striped-odd {
+  tr:nth-child(odd) {
+    background-color: @webcellRowStripedBackColor;
+  }
+}
+
+.striped-even {
+  tr:nth-child(even) {
+    background-color: @webcellRowStripedBackColor;
+  }
+}
+
+.enable-hover {
+  tr:hover {
+    background-color: @webcellRowHoverBackColor;
+  }
+}
+
+.thead-bcolor {
+  thead tr, tr:first-child th {
+    background-color: @webcellRowHeadBackColor;
+  }
+}
+
+.webcell-table__head {
+  position: relative;
+  overflow: hidden;
+}
+
+.webcell-table__body {
+  position: relative;
+  overflow: auto;
+}
+
+.webcell-table__wrapper {
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  .webcell-table__body {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}
+
+.botrightline {
+  border-bottom: 1px solid @webcellBorderColor;
+  border-right: 1px solid @webcellBorderColor;
+  &.overflow-y {
+    tr:last-child td {
+      border-bottom: none;
+    }
+  }
+  &.overflow-x {
+    th:last-child, td:last-child {
+      border-right: none;
+    }
+  }
+}
+
+.nowrap {
+  td {
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}
