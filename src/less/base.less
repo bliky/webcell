@@ -121,3 +121,15 @@ table.webcell-table {
     white-space: nowrap;
   }
 }
+
+.webcell-table--background {
+  overflow: hidden;
+  display: inline-block;
+  border: 1px solid @webcellBorderColor;
+  background-color: @webcellTableBackColor;
+  padding: @webcellTableBackPadding;
+  //font-size: 0; // 去除行内子元素baseline对齐造成的间隙，如下设置子元素为块级显示也能达到相同的效果
+  .webcell-table {
+    display: block;
+  }
+}

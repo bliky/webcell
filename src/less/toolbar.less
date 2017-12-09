@@ -1,0 +1,24 @@
+.webcell-pannel {
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  font-size: 0;
+  border: 1px solid @webcellBorderColor;
+  background-color: @webcellPannelBackColor;
+  padding: @webcellTableBackPadding;
+}
+
+.webcell-toolbar {
+  position: relative;
+  overflow: hidden;
+  font-size: 0;
+  padding: 10px;
+  border: 1px solid @webcellBorderColor;
+  background-color: @webcellToolbarBackColor;
+
+  & + .webcell-table {
+    border-top: none;
+  }
+}
